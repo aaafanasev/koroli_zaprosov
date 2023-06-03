@@ -1,0 +1,35 @@
+CREATE SCHEMA stg;
+
+
+CREATE TABLE stg.events (
+	event_id varchar(255) NULL,
+	event_timestamp timestamp NULL,
+	event_type varchar(255) NULL,
+	page_url varchar(255) NULL,
+	page_url_path varchar(255) NULL,
+	referer_url varchar(255) NULL,
+	referer_url_scheme varchar(255) NULL,
+	referer_url_port int4 NULL,
+	referer_medium varchar(255) NULL,
+	utm_medium varchar(255) NULL,
+	utm_source varchar(255) NULL,
+	utm_content varchar(255) NULL,
+	utm_campaign varchar(255) NULL,
+	click_id varchar(255) NULL,
+	geo_latitude float8 NULL,
+	geo_longitude float8 NULL,
+	geo_country varchar(255) NULL,
+	geo_timezone varchar(255) NULL,
+	geo_region_name varchar(255) NULL,
+	ip_address varchar(255) NULL,
+	browser_name varchar(255) NULL,
+	browser_user_agent varchar(255) NULL,
+	browser_language varchar(255) NULL,
+	os varchar(255) NULL,
+	os_name varchar(255) NULL,
+	os_timezone varchar(255) NULL,
+	device_type varchar(255) NULL,
+	device_is_mobile bool NULL,
+	user_custom_id varchar(255) NULL,
+	user_domain_id varchar(255) NULL
+);
