@@ -30,13 +30,9 @@ def get_files():
     url = 'https://storage.yandexcloud.net/hackathon/events-2022-Sep-30-2134.parquet'
     df = pd.read_parquet(url, 'pyarrow')
 
-    engine = create_engine('postgresql://jovyan:jovyan@158.160.62.179:5432/postgres')
-
-    df.to_sql('events', engine, schema='stg', if_exists='replace', index=False)
+    df.to_sql('events', engine, schema='stg', if_exists='append', index=False)
 
     logging.info(f'DATA SUCCESFULLY UPLOADED')
-
-
 
 
 default_args = {
