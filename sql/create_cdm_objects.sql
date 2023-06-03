@@ -7,8 +7,6 @@ select to_char(e.event_timestamp,'HH24') event_hour,
        case when substring(e.page_url_path ,2) like 'product_%' then 'product' else substring(e.page_url_path ,2) end as event_type,
        count(1) event_count
   from stg.events e 
- where e.user_domain_id = '32e53fe3-71b6-4b66-ab8c-9a79d544b912'
-   and event_timestamp between '2022-09-30 00:00:00' and '2022-10-01 23:59:59'
  group by to_char(e.event_timestamp,'HH24'),
           date(e.event_timestamp),
           case when substring(e.page_url_path ,2) like 'product_%' then 'product' else substring(e.page_url_path ,2) end;
